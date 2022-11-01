@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <script>
+        {
+            // array loop
+            const array = ["Rachmat", "Ardico", "Perdana"];
+
+            array.forEach(function(value, index) {
+                console.log(`${index} : ${value}`);
+            });
+
+            array.forEach((value, index) => console.log(`${index} : ${value}`));
+            
+            array.forEach(value => console.log(`${value}`));
+        }
+
+        {
+            // Arrray Queue
+            const queue = [];
+
+            queue.push("Rachmat");
+            queue.push("Ardico");
+            queue.push("Perdana");
+
+            console.log(queue.shift());
+            console.log(queue.shift());
+            console.log(queue.shift());
+            console.log(queue.shift());
+        }
+
+        {
+            // Array Stack
+            const stack = [];
+
+            stack.push("Rachmat");
+            stack.push("Ardico");
+            stack.push("Perdana");
+
+            console.log(stack.pop());
+            console.log(stack.pop());
+            console.log(stack.pop());
+            console.log(stack.pop());
+        }
+
+        {
+            // Array Search
+            const source = [1,2,3,4,5,1,2,3,4,5];
+            console.log(source.find(value => value > 3)); // 4
+            console.log(source.findIndex(value => value > 3)); // 3
+            console.log(source.includes(7)); // false
+            console.log(source.indexOf(5)); // 4
+            console.log(source.lastIndexOf(5)); // 9
+        }
+
+        {
+            // Array Filter
+            const numbers = [1,2,3,4,5,6,7,8,9,10];
+            const ganjil = numbers.filter(value => value % 2 == 1);
+            const genap = numbers.filter(value => value % 2 == 0);
+
+            console.log(numbers);
+            console.log(ganjil);
+            console.log(genap);
+        }
+
+        {
+            // Array Transform
+
+            const names = "Rachmat Ardico Perdana".split(" ");
+            const namesUpper = names.map(value => value.toUpperCase());
+            console.log(namesUpper);
+
+            const namesReduce = names.reduce((before, value) => before + " " + value);
+            console.log(namesReduce);
+            
+            const namesRight = names.reduceRight((before, value) => before + " " + value);
+            console.log(namesRight);
+
+            const numbers = [1,2,3,4,5,6,7,8,9,10];
+            const total = numbers.reduce((before, value) => before + value);
+            console.log(total);
+        }
+    </script>
+</body>
+</html>
